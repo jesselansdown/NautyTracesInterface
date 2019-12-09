@@ -56,7 +56,7 @@ Persons := [
 PackageWWWHome := "http://TODO/",
 
 ArchiveURL     := Concatenation( ~.PackageWWWHome, "NautyTracesInterface-", ~.Version ),
-README_URL     := Concatenation( ~.PackageWWWHome, "README" ),
+README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 
 ArchiveFormats := ".tar.gz",
@@ -83,7 +83,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">= 4.6",
+  GAP := ">= 4.9",
   NeededOtherPackages := [ [ "GAPDoc", ">= 1.5" ] ],
   SuggestedOtherPackages := [ ],
   ExternalConditions := [ ],

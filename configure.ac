@@ -9,7 +9,7 @@ dnl ##
 dnl ## Setup autoconf
 dnl ##
 AC_PREREQ([2.68])
-AC_INIT([NautyTracesInterface], m4_esyscmd([tr -d '\n' < VERSION]))
+AC_INIT([NautyTracesInterface], [package])
 AC_CONFIG_SRCDIR([src/NautyTracesInterface.c])
 AC_CONFIG_HEADER([src/pkgconfig.h:cnf/pkgconfig.h.in])
 AC_CONFIG_MACRO_DIR([m4])
@@ -46,11 +46,6 @@ dnl ##
 AC_FIND_GAP
 
 dnl ##
-dnl ## Detect pointer size to distinguish 32 and 64 bit builds
-dnl ##
-AC_CHECK_SIZEOF([void **])
-
-dnl ##
 dnl ## Detect Windows resp. Cygwin
 dnl ##
 case $host_os in
@@ -73,11 +68,6 @@ NAUTY_CPPFLAGS="-I$NAUTY"
 NAUTY_PATH="$NAUTY"
 AC_SUBST(NAUTY_CPPFLAGS)
 AC_SUBST(NAUTY_PATH)
-
-dnl ##
-dnl ## Rebuild configure if VERSION file changes
-dnl ##
-AC_SUBST([CONFIG_STATUS_DEPENDENCIES], ['$(top_srcdir)/VERSION'])
 
 dnl ##
 dnl ## Output everything
